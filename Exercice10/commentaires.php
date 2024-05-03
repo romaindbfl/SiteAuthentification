@@ -14,7 +14,7 @@ include_once 'bdd.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comment = $_POST['comment'];
-    $imageId = $_POST['image_id']; // Supposons que vous passiez l'ID de l'image via un formulaire
+    $imageId = $_POST['image_id']; 
 
     // Vérifier si 'id' est défini dans $_SESSION['user'] et le convertir en entier
     if (isset($_SESSION['user']['id'])) {

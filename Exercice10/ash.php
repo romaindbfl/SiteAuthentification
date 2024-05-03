@@ -2,8 +2,6 @@
 include_once 'verif.php';
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>

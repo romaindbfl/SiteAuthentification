@@ -46,7 +46,6 @@ CREATE TABLE IF NOT EXISTS `commentaires` (
 INSERT INTO `commentaires` (`comment_id`, `user_id`, `image_id`, `comment_text`, `created_at`) VALUES
 (18, 12, 1, 'yo', '2024-05-03 18:28:15'),
 (19, 12, 2, 'yo', '2024-05-03 18:36:27'),
-(20, 12, 2, 'tg', '2024-05-03 18:36:30');
 
 -- --------------------------------------------------------
 
