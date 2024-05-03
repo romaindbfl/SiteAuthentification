@@ -12,11 +12,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_start();
         $_SESSION['user'] = $user;
 
-        header("Location: Exercice10.php");
+        header("Location: index.php");
         exit();
     } else {
         $errorMessage = 'Adresse e-mail ou mot de passe incorrect.';
-        header("Location: Exercice10.1.php");
+        header("Location: authentification.php");
     }
 }
 

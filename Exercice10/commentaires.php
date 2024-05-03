@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['user'])) {
-    header('Location: Exercice10.1.php');
+    header('Location: authentification.php');
     exit();
 }
 
