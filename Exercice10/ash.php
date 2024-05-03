@@ -2,6 +2,8 @@
 include_once 'verif.php';
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -32,12 +34,15 @@ include_once 'verif.php';
     <h3>Commentaires sur la photo</h3>
     <form action="commentaires.php" method="post">
     <textarea name="comment" placeholder="Ajouter un commentaire"></textarea>
+    <input type="hidden" name="image_id" value="1"> 
     <input type="submit" value="Ajouter commentaire">
 </form>
+
 
     <!-- Liste des commentaires -->
     <div class="comments-list">
         <?php
+        $imageId = 1; // Remplacez 1 par l'ID réel de l'image "ash.png"
         // Inclure le code PHP pour afficher les commentaires
         include 'commentaires.php';
         ?>

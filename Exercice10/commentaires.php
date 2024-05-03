@@ -14,14 +14,15 @@ include_once 'bdd.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comment = $_POST['comment'];
-    
+    $imageId = $_POST['image_id']; // Supposons que vous passiez l'ID de l'image via un formulaire
+
     // Vérifier si 'id' est défini dans $_SESSION['user'] et le convertir en entier
     if (isset($_SESSION['user']['id'])) {
         $userId = intval($_SESSION['user']['id']);
         
         // Insertion du commentaire dans la base de données
-        $stmt = $pdo->prepare("INSERT INTO commentaires (user_id, comment_text) VALUES (?, ?)");
-        $stmt->execute([$userId, $comment]);
+        $stmt = $pdo->prepare("INSERT INTO commentaires (user_id, comment_text, image_id) VALUES (?, ?, ?)");
+        $stmt->execute([$userId, $comment, $imageId]);
     } else {
         // Redirection vers la page précédente avec un message d'erreur
         header("Location: {$_SERVER['HTTP_REFERER']}?error=user_id");
@@ -33,10 +34,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
 }
 
+// Récupérer les commentaires en fonction de l'ID de l'image
 $stmt = $pdo->prepare("SELECT commentaires.*, users.username FROM commentaires 
                       INNER JOIN users ON commentaires.user_id = users.id 
+                      WHERE commentaires.image_id = ?
                       ORDER BY commentaires.created_at DESC");
-$stmt->execute();
+$stmt->execute([$imageId]);
 $comments = $stmt->fetchAll();
 ?>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3307
--- Généré le : ven. 03 mai 2024 à 18:10
+-- Généré le : ven. 03 mai 2024 à 18:36
 -- Version du serveur : 10.10.2-MariaDB
 -- Version de PHP : 8.0.26
 
@@ -31,23 +31,45 @@ DROP TABLE IF EXISTS `commentaires`;
 CREATE TABLE IF NOT EXISTS `commentaires` (
   `comment_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
+  `image_id` int(11) NOT NULL,
   `comment_text` text NOT NULL,
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`comment_id`),
-  KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  KEY `user_id` (`user_id`),
+  KEY `fk_image_id` (`image_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Déchargement des données de la table `commentaires`
 --
 
-INSERT INTO `commentaires` (`comment_id`, `user_id`, `comment_text`, `created_at`) VALUES
-(12, 12, 'yo', '2024-05-03 08:52:05'),
-(13, 12, 'fez', '2024-05-03 08:55:42'),
-(14, 12, 'vdsv', '2024-05-03 08:57:34'),
-(15, 12, 'bfdd', '2024-05-03 08:59:43'),
-(16, 12, 'v', '2024-05-03 09:04:40'),
-(17, 12, 'fezfe', '2024-05-03 09:08:24');
+INSERT INTO `commentaires` (`comment_id`, `user_id`, `image_id`, `comment_text`, `created_at`) VALUES
+(18, 12, 1, 'yo', '2024-05-03 18:28:15'),
+(19, 12, 2, 'yo', '2024-05-03 18:36:27'),
+(20, 12, 2, 'tg', '2024-05-03 18:36:30');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `images`
+--
+
+DROP TABLE IF EXISTS `images`;
+CREATE TABLE IF NOT EXISTS `images` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Déchargement des données de la table `images`
+--
+
+INSERT INTO `images` (`id`, `image_name`) VALUES
+(1, 'ash.png'),
+(2, 'sledge.png'),
+(3, 'bandit.png'),
+(4, 'vigil.png');
 
 -- --------------------------------------------------------
 
@@ -81,7 +103,8 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 -- Contraintes pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
-  ADD CONSTRAINT `commentaires_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `commentaires_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `fk_image_id` FOREIGN KEY (`image_id`) REFERENCES `images` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
