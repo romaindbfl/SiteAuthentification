@@ -1,0 +1,111 @@
+body {
+    
+    margin: 0;
+    padding: 0;
+    font-family: 'Copperplate Gothic Bold', sans-serif; 
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+
+section h1 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    font-size: 28px; 
+}
+
+section h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    font-size: 18px; 
+}
+
+section p {
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* Style pour les figures */
+figure {
+    margin-bottom: 20px;
+    text-align: center; /* Centrer le contenu */
+    position: relative; /* Pour positionner la légende par rapport à la figure */
+}
+
+/* Style pour les images à l'intérieur des figures */
+figure img {
+    display: block; /* Permet de centrer l'image correctement */
+    margin: 0 auto; /* Centrer l'image horizontalement */
+}
+
+/* Style pour les légendes */
+figcaption {
+    font-style: italic;
+    font-size: 14px;
+    color: #000000;
+    margin-top: 10px;
+}
+
+#logo {
+    height: auto; /* La hauteur s'ajuste automatiquement pour conserver les proportions */
+    margin-right: 20px; /* Espacement à droite du logo pour éviter le chevauchement avec le texte */
+    float: left; /* Flotter le logo à gauche */
+}
+
+.comment-section {
+    border: 2px solid black; 
+    padding: 20px; 
+    margin-top: 20px; 
+    background-color: rgba(0, 0, 0, 0.1); /* Ajout d'une couleur de fond pour tester */
+}
+.comments-list {
+    margin-top: 15px; /* Marge en haut */
+}
+
+.comment {
+    margin-bottom: 15px; /* Marge en bas pour chaque commentaire */
+    border: 1px solid #333; /* Bordure grise autour de chaque commentaire */
+    padding: 15px; /* Espace intérieur du commentaire */
+    border-radius: 5px; /* Coins arrondis pour la bordure */
+}
