@@ -40,7 +40,7 @@ include_once 'verif.php';
     <!-- Liste des commentaires -->
     <div class="comments-list">
         <?php
-        $imageId = 3; 
+        $imageId = 1; 
         // Inclure le code PHP pour afficher les commentaires
         include 'commentaires.php';
         ?>
