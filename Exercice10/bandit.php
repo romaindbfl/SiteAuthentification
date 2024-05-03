@@ -36,7 +36,7 @@ include_once 'verif.php';
     <!-- Liste des commentaires -->
     <div class="comments-list">
         <?php
-        $imageId = 1; // Remplacez 1 par l'ID réel de l'image "ash.png"
+        $imageId = 1; 
         // Inclure le code PHP pour afficher les commentaires
         include 'commentaires.php';
         ?>
