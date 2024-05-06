@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3307
--- Généré le : ven. 03 mai 2024 à 18:36
+-- Généré le : lun. 06 mai 2024 à 20:01
 -- Version du serveur : 10.10.2-MariaDB
 -- Version de PHP : 8.0.26
 
@@ -37,15 +37,7 @@ CREATE TABLE IF NOT EXISTS `commentaires` (
   PRIMARY KEY (`comment_id`),
   KEY `user_id` (`user_id`),
   KEY `fk_image_id` (`image_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Déchargement des données de la table `commentaires`
---
-
-INSERT INTO `commentaires` (`comment_id`, `user_id`, `image_id`, `comment_text`, `created_at`) VALUES
-(18, 12, 1, 'yo', '2024-05-03 18:28:15'),
-(19, 12, 2, 'yo', '2024-05-03 18:36:27'),
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -84,15 +76,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(11, 'Hyperiale', 'romain.deboffle2308@gmail.com', '$2y$10$rwAv.PSZJ2.OlPsgbghNduh5JKyMytOmeoPQsU2IGXMG3u8Hxl3R2'),
-(12, 'romain77767', 'deboffle.romain2003@gmail.com', '$2y$10$QdYxE3BbunYU7yW2bq.wf.4WMpl5UbkdWWEFQj5IkhK3pOYWVVQiW');
+(0, 'test', 'test.test@gmail.com', '$2y$10$ghIWlUuk5tjCSRB8905a6uGaG33sgW1f2ELqbczfS5P33cYtSLIqy');
 
 --
 -- Contraintes pour les tables déchargées

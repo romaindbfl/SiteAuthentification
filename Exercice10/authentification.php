@@ -9,7 +9,6 @@ session_start();
 // Vérifier s'il y a un message d'erreur dans la session
 if (isset($_SESSION['error'])) {
     echo "<p>{$_SESSION['error']}</p>";
-    // Une fois le message affiché, supprimez-le de la session pour qu'il ne s'affiche plus après le rechargement de la page
     unset($_SESSION['error']);
 }
 ?>
