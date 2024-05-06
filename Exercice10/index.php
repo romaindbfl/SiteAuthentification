@@ -1,6 +1,3 @@
-<?php
-include_once 'verif.php';
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,12 +8,21 @@ include_once 'verif.php';
 </head>
 <body>
     <header>
-        <img src="r6.png" alt="Logo Rainbow Six Siege" id="logo" width= "150px">
+        <img src="pictures/r6.png" alt="Logo Rainbow Six Siege" id="logo" width= "150px">
         <h1>Rainbow Six Siege</h1>
         <nav>
             <ul>
                 <li><a href="#operators">Opérateurs</a></li>
                 <li><a href="#maps">Cartes</a></li>
+                <li><?php
+                    session_start(); // Démarrer la session
+                    // Vérifier si l'utilisateur est connecté
+                    if (isset($_SESSION['user'])) {
+                        echo '<a href="deconnexion.php">Déconnexion</a>';
+                    } else {
+                        echo '<a href="authentification.php">Connexion</a>';
+                    }
+                    ?></li> 
             </ul>
         </nav>
     </header>
@@ -28,24 +34,24 @@ include_once 'verif.php';
             <section id = "attackers">
                 <h2>Attaquants</h2>
                 <figure>
-                <a href="ash.php"><img src="ash.png" alt="Opérateur Ash" width="300" height="200"></a>
+                <a href="ash.php"><img src="pictures/ash.png" alt="Opérateur Ash" width="300" height="200"></a>
                 <figcaption>Ash</figcaption>
                 </figure>
 </section>
 
                 <figure>
-                <a href="sledge.php"><img src="sledge.png" alt="Opérateur Sledge" width="300" height="200"></a>
+                <a href="sledge.php"><img src="pictures/sledge.png" alt="Opérateur Sledge" width="300" height="200"></a>
                 <figcaption>Sledge</figcaption>
                 </figure>
             </section>
             <section id = "defenders">
                 <h2>Défenseurs</h2>
                 <figure>
-                <a href="bandit.php"><img src="bandit.png" alt="Opérateur Bandit" width="300" height="200"></a>
+                <a href="bandit.php"><img src="pictures/bandit.png" alt="Opérateur Bandit" width="300" height="200"></a>
                 <figcaption>Bandit</figcaption>
                 </figure>
                 <figure>
-                <a href="vigil.php"><img src="vigil.png" alt="Opérateur Vigil" width="300" height="200"></a>
+                <a href="vigil.php"><img src="pictures/vigil.png" alt="Opérateur Vigil" width="300" height="200"></a>
                 <figcaption>Vigil</figcaption>
                 </figure>
             </section>
@@ -55,11 +61,11 @@ include_once 'verif.php';
         <section id="maps">
             <h1>Cartes</h1>
             <figure>
-            <img src="frontiere.png" alt="Carte Frontiere" width="700" height="400">
+            <img src="pictures/frontiere.png" alt="Carte Frontiere" width="700" height="400">
             <figcaption>Frontiere</figcaption>
             </figure>
             <figure>
-            <img src="chalet.png" alt="Carte Chalet" width="700" height="400">
+            <img src="pictures/chalet.png" alt="Carte Chalet" width="700" height="400">
             <figcaption>Chalet</figcaption>
             </figure>
         </section>

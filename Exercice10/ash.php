@@ -12,7 +12,7 @@ include_once 'verif.php';
 </head>
 <body>
     <header>
-        <img src="r6.png" alt="Logo Rainbow Six Siege" id="logo" width= "80px">
+        <a href="index.php"><img src="pictures/r6.png" alt="Logo Rainbow Six Siege" id="logo" width= "80px"></a>
         <h1>Rainbow Six Siege</h1>
     </header>
 
@@ -23,7 +23,7 @@ include_once 'verif.php';
             <section id = "attackers">
                 <h2>Attaquants</h2>
                 <figure>
-                <img src="ash.png" alt="Opérateur Ash" width="300" height="200">
+                <img src="pictures/ash.png" alt="Opérateur Ash" width="300" height="200">
                 <figcaption>Ash</figcaption>
                 </figure>
 

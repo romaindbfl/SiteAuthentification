@@ -11,7 +11,7 @@ include_once 'verif.php';
 </head>
 <body>
     <header>
-        <img src="r6.png" alt="Logo Rainbow Six Siege" id="logo" width= "80px">
+    <a href="index.php"><img src="pictures/r6.png" alt="Logo Rainbow Six Siege" id="logo" width= "80px"></a>
         <h1>Rainbow Six Siege</h1>
     </header>
 
@@ -24,7 +24,7 @@ include_once 'verif.php';
                 <h2>Défenseurs</h2>
                
                 <figure>
-                <img src="vigil.png" alt="Opérateur Vigil" width="300" height="200">
+                <img src="pictures/vigil.png" alt="Opérateur Vigil" width="300" height="200">
                 <figcaption>Vigil</figcaption>
                 </figure>
                 <section class="comment-section">

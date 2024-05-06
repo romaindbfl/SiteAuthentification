@@ -3,7 +3,16 @@ include 'connexion.php';
 include 'inscription.php'; 
 
 ?>
+<?php
+session_start();
 
+// Vérifier s'il y a un message d'erreur dans la session
+if (isset($_SESSION['error'])) {
+    echo "<p>{$_SESSION['error']}</p>";
+    // Une fois le message affiché, supprimez-le de la session pour qu'il ne s'affiche plus après le rechargement de la page
+    unset($_SESSION['error']);
+}
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -14,10 +23,16 @@ include 'inscription.php';
     <link rel="stylesheet" href="Exercice10.css">
 </head>
 <body>
-    <header>
-        <img src="r6.png" alt="Logo Rainbow Six Siege" id="logo" width="75">
-        <h1>Rainbow Six Siege</h1>
-    </header>
+<header>
+<img src="pictures/r6.png" alt="Logo Rainbow Six Siege" id="logo" width= "150px">
+    <h1>Rainbow Six Siege</h1>
+    <nav>
+        <ul>
+            <li><a href="index.php">Accueil</a></li> 
+        </ul>
+    </nav>
+</header>
+
 
     <main>
 
