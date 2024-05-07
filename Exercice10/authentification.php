@@ -1,15 +1,21 @@
 <?php
-include 'connexion.php'; 
-include 'inscription.php'; 
-
-?>
-<?php
 session_start();
 
 // Vérifier s'il y a un message d'erreur dans la session
 if (isset($_SESSION['error'])) {
     echo "<p>{$_SESSION['error']}</p>";
     unset($_SESSION['error']);
+}
+// Vérifier s'il y a un message de succes dans la session
+if (isset($_SESSION['success'])) {
+    echo "<p>{$_SESSION['success']}</p>";
+    unset($_SESSION['success']);
+}
+
+// Vérifier si l'utilisateur est déjà connecté afin qu'il ne puisse pas se rendre sur la page
+if (isset($_SESSION['user'])) {
+    header("Location: index.php");
+    exit();
 }
 ?>
 

@@ -1,6 +1,6 @@
 <?php
 require_once 'bdd.php';
-
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST['loginEmail']);
@@ -9,14 +9,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = loginUser($email, $password);
 
     if ($user) {
-        session_start();
+       
         $_SESSION['user'] = $user;
 
         header("Location: index.php");
         exit();
     } else {
-        $errorMessage = 'Adresse e-mail ou mot de passe incorrect.';
+        $_SESSION['error'] = "Adresse e-mail ou mot de passe incorrect.";
         header("Location: authentification.php");
+        exit;
     }
 }
 

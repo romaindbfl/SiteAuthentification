@@ -35,8 +35,6 @@ include_once 'verif.php';
     <input type="hidden" name="image_id" value="1"> 
     <input type="submit" value="Ajouter commentaire">
 </form>
-
-
     <!-- Liste des commentaires -->
     <div class="comments-list">
         <?php
@@ -46,10 +44,7 @@ include_once 'verif.php';
         ?>
     </div>
 </section>
-
-
     </main>
-
     <footer>
         <p>© 2020 Romain Deboffle. Tous droits réservés.</p>
     </footer>

@@ -1,0 +1,19 @@
+Voici la hierarchie des pages afin de vous aider à vous y repérer : 
+ 
+- Index.php (accessible par tous)  -> Ash.php (accessible si connexion)
+	    			   -> Sledge.php (accessible si connexion)	
+	   			   -> Bandit.php (accessible si connexion)	
+	   			   -> Vigil.php (accessible si connexion)
+
+- Authentification.php : Page avec le formulaire d'inscription et de connexion
+
+Page avec uniquement des scripts php :
+
+- bdd.php
+- commentaires.php
+- connexion.php
+- deconnexion.php
+- verif.php
+- inscription.php
+
+/!\ Vous avez à disposition une sauvegarde rainbow_six.sql de la base de données.
